@@ -3,8 +3,13 @@ import React from 'react'
 export default function Product(props){
   return(
     <div>
-      <img src={props.image} height="100" width="100" />
-      <h5></h5>
+      <img src={props.image} height="100" width="100" alt='' />
+      <div>
+        <h5>{props.name}</h5>
+        <p>{props.price}</p>
+        <button onClick={props.deleteThingFn}>Delete</button>
+      </div>
+      
     </div>
   )
 }

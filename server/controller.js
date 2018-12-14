@@ -12,5 +12,12 @@ module.exports = {
     db.create_item({name, price, image}).then(response => {
       res.status(200).send(response)
     })
+  },
+  deleteItem: (req, res) => {
+    const db = req.app.get('db')
+    let {id} = req.params
+    db.delete_item({id}).then(response => {
+      res.status(200).send(response)
+    })
   }
 }
