@@ -1,30 +1,18 @@
 import React, {Component} from 'react'
 
 class Form extends Component {
-  constructor(props){
-    super(props)
-
-    this.state = {
-      image: '',
-      imageUrlInput: '',
-      thingInput: '',
-      priceInput: 0
-    }
-    this.handleImageUrlInput = this.handleImageUrlInput.bind(this)
-  }
-
-  handleImageUrlInput(text){
-    this.setState({
-      imageUrlInput: text
-    })
-  }
 
   render(){
     return(
       <div>
         Form
-        <input onChange={(e) => this.handleImageUrlInput(e.target.value)} />
+        <input value={this.props.imageUrlInput} onChange={(e) => this.props.hImageUrlInput(e.target.value)} placeholder={'Image url here'} />
+        <input value={this.props.thingInput} onChange={(e) => this.props.hThingInput(e.target.value)} placeholder={'Thing input here'} />
+        <input value={this.props.priceInput} onChange={(e) => this.props.hPriceInput(e.target.value)} placeholder={'Add price here'} />
+        <button onClick={this.props.hCancelInput}>Cancel</button>
+        <button>Add to Inventory</button>
       </div>
+      
     )
   }
 }
