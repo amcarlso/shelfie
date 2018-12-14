@@ -7,7 +7,7 @@ export default function Product(props){
       <div>
         <h5>{props.name}</h5>
         <p>{props.price}</p>
-        <button onClick={props.deleteThingFn}>Delete</button>
+        <button onClick={() => props.deleteThingFn(props.id)}>Delete</button>
       </div>
       
     </div>

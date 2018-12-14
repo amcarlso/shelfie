@@ -9,7 +9,7 @@ class Dashboard extends Component {
   }
 
   deleteThing(id){
-    axios.delete(`/api/thing/id`)
+    axios.delete(`/api/thing/${id}`)
     .then(res => {
       this.props.getThingsFn()
     })
